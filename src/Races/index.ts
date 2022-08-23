@@ -1,4 +1,4 @@
-import Race from './race';
+import Race from './Race';
 import Dwarf from './Dwarf';
 import Elf from './Elf';
 import Halfling from './Halfling';

@@ -1,4 +1,4 @@
-import Race from './race';
+import Race from './Race';
 
 export default class Elf extends Race {
   private _maxLifePoints: number;
