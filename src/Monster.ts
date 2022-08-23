@@ -1,23 +1,24 @@
 import { SimpleFighter } from "./Fighter";
 
+const monsterLifePoints = 85;
+const monsterStrength = 63;
+
 class Monster implements SimpleFighter {
-  protected _lifepoints: number;
-  protected _strength: number;
+  private _lifepoints;
+  readonly strength = monsterStrength;
 
   constructor(){
-    this._lifepoints: 85;
-    this._strength: 63;
+    this._lifepoints: monsterLifePoints;
+    this.strength: monsterStrength;
   }
 
   receiveDamage(attackPoints: number): number {
-    const damage = this._lifepoints -= attackPoints;
-    if (damage === 0) {
-      this._lifepoints === -1;
-    }
-    return this._lifepoints
+    this._lifepoints -= attackPoints;
+    if (this._lifepoints <= 0) { this._lifepoints = -1; }
+    return this._lifepoints;
   }
 
   attack(enemy: SimpleFighter): void {
-    enemy.receiveDamage(this._strength)
+    enemy.receiveDamage(this.strength)
   }
 }
